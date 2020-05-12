@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SimpleController {
 	
-	 @GetMapping("/")
+	 @GetMapping("/ui/upload")
 	 public String MyPortfolio(Model model) {
 		
-		 return "hello";
+		 return "upload";
 		 
 	 }
 	
