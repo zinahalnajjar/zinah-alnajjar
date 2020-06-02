@@ -17,7 +17,13 @@
 
 <body>
 
-
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#">About</a>
+		<a href="#">Gallery</a>
+		<a href="#">Inspiration</a>
+		<a href="#">Contact</a>
+	</div>
 	<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
 
 	<script>
@@ -38,19 +44,25 @@
 
 			<h1>Upload ArtWork</h1>
 
-			<div class="alert alert-success" th:text="${Message}" role="alert"></div>
+			<div th:if="${Message != null}" class="alert alert-success" th:text="${Message}" role="alert"></div>
 
 
 			<div class="form-group">
-				<label for="exampleInputEmail1">Name</label> <input type="text"
-					class="form-control" name="artworkNameInput"
+				<label for="exampleInputEmail1">Name*:</label> <input type="text"
+					class="form-control" name="artworkNameInput" required
 					aria-describedby="emailHelp" placeholder="Enter name">
 
 			</div>
-
 				<div class="form-group">
-					<label for="exampleFormControlFile1">ArtWork to Upload</label> <input
-					type="file" class="form-control-file" name="artworkfile">
+					<label for="pageSelectInput">Select page:</label>
+					<select class="form-control" id="pageSelectInput">
+                        <option>gallery</option>
+                        <option>home</option>
+                    </select>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlFile1">ArtWork to Upload*:</label> <input
+					type="file" class="form-control-file" name="artworkfile" required>
 			</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
