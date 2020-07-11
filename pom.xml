@@ -11,7 +11,7 @@
 	<groupId>com.Portfolio</groupId>
 	<artifactId>MyPortfolioProject-</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MyPortfolioProject-</name>
+	<name>MyPortfolio</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
