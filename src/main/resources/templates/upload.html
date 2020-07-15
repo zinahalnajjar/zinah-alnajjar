@@ -12,29 +12,109 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<style type="text/css">
+.nav  {
+		
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+		
+		}
+		
+		.nav li {
+		
+		display: inline-block;
+		
+		}
+		
+		.nav a{
+		color: #000000;
+		display:inline-block;
+		padding: 0.5em 0.75em;
+		background-color: #000000;
+		border-radius: 4px;
+		text-decoration: none;
+		
+		}
+		
+		
+		.nav a:hover {
+		
+		background-color: #000;
+		
+		}
+		
+		.nav .active {
+		background-color: #FFB6C1; 
+		}
+		
+		.form-group {
+			color: white;
+		}
 
+		
+		
+		.button {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #DB7093;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: white;
+  }
+		
+		
+		
+
+</style>
 </head>
 
 <body>
 
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="#">About</a>
-		<a href="#">Gallery</a>
-		<a href="#">Inspiration</a>
-		<a href="#">Contact</a>
-	</div>
-	<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
-
-	<script>
-		function openNav() {
-			document.getElementById("mySidenav").style.width = "250px";
-		}
-
-		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0";
-		}
-	</script>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+      
+	
+     
+      <a class="navbar-brand" href="#">My Portfolio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <li><a href="/aboutPage">About</a></li>
+        <li><a href="/galleryPage">Gallery</a></li>
+        <li><a href="/contactPage">Contact</a></li>
+        <li><a class="active" href="/ui/upload">Upload</a></li>
+      </ul>
+      
+      
+    </div>
+  </div>
+</nav>
 
 
 
@@ -48,23 +128,26 @@
 
 
 			<div class="form-group">
+			     
 				<label for="exampleInputEmail1">Name*:</label> <input type="text"
 					class="form-control" name="artworkNameInput" required
 					aria-describedby="emailHelp" placeholder="Enter name">
 
 			</div>
 				<div class="form-group">
-					<label for="pageSelectInput">Select page:</label>
+				    
+					<label for="pageSelectInput">Select Page</label>
 					<select class="form-control" id="pageSelectInput">
-                        <option>gallery</option>
-                        <option>home</option>
+                        <option>Gallery</option>
+                        <option>Home</option>
                     </select>
 				</div>
 				<div class="form-group">
+				    
 					<label for="exampleFormControlFile1">ArtWork to Upload*:</label> <input
 					type="file" class="form-control-file" name="artworkfile" required>
 			</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button class="button button1">Send Message</button>
 		</form>
 
 	</div>

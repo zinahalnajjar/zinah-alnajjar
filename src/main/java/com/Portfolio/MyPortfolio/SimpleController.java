@@ -63,5 +63,31 @@ public class SimpleController {
         return "upload";
 
     }
+    
+    
+    @GetMapping("/galleryPage")
+    public String galleryPage(Model model) {
+        
+        return "Gallery";
 
-}
+    }
+    
+    @GetMapping("/aboutPage")
+    public String aboutPage(Model model) {
+        
+        return "about";
+
+    }
+    
+    @GetMapping("/contactPage")
+    public String contactPage(Model model) {
+       
+        return "contact";
+
+    }
+    
+   
+
+    }
+
+

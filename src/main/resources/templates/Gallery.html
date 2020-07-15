@@ -36,7 +36,6 @@
 		
 		}
 		
-		
 		.nav a:hover {
 		
 		background-color: #000;
@@ -49,19 +48,7 @@
 		
 		
 		
-		
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-
-		.img-container {
-			text-align: center;
-		}
-
-
-
-		body {
+			body {
 			background:
 				
 				/* bottom, image */
@@ -69,28 +56,8 @@
 		}
 
 
-
-
-
-		body {
-			font-family: "Lato", sans-serif;
-		}
-
-		
-
-		h1 {
-			color: white;
-		}
-
-		h4 {
-			color: white;
-		}
 	</style>
-</head>
-
-<body>
-
-
+	
 	<body>
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -107,26 +74,22 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><a class="active" href="/">Home</a></li>
+        <li ><a href="/">Home</a></li>
         <li><a href="/aboutPage">About</a></li>
-        <li><a href="/galleryPage">Gallery</a></li>
+        <li><a class="active" href="/galleryPage">Gallery</a></li>
         <li><a href="/contactPage">Contact</a></li>
         <li><a href="/ui/upload">Upload</a></li>
       </ul>
       
+      
     </div>
   </div>
 </nav>
-
 	
-
-	<div class="container">
-		<div class="row">
-			<div class="column">
-				<h1>Aesthetic</h1>
-				<h4>My recent Artworks</h4>
-			</div>
-		</div>
+	
+	
+	
+	
 		<span>
             <div class="row">
                 <div class="col-sm-4" th:each="artwork: ${artworkList}">
@@ -137,11 +100,7 @@
             </div>
 		</span>
 		
-		
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-</body>
-
-</html>
+		</body>
+	
+	</head>
+	</html>
