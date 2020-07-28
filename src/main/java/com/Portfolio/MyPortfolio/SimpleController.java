@@ -75,19 +75,7 @@ public class SimpleController {
 
     }
     
-    @GetMapping("/aboutPage")
-    public String aboutPage(Model model) {
-        
-        return "about";
-
-    }
-    
-    @GetMapping("/contactPage")
-    public String contactPage(Model model) {
-       
-        return "contact";
-
-    }
+   
     
    
 
