@@ -16,6 +16,10 @@ jobs:
       mysql:
         image: mysql:5.7
         env:
+          MYSQL_HOST: mysql
+          MYSQL_USER: root
+          MYSQL_PASSWORD: artwork123
+          MYSQL_DATABASE: portfoliodb
           MYSQL_ROOT_PASSWORD: artwork123
         ports:
         - 3306
