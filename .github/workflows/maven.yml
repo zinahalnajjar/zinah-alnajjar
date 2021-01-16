@@ -11,17 +11,22 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_USER: root
+          MYSQL_PASSWORD: artwork123
+        ports:
+        - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+    - name: Verify MySQL connection from host
+      run: |
+        sudo apt-get install -y mysql-client
+        mysql --host 127.0.0.1 --port 3306 -uroot -partwork123 -e "SHOW DATABASES"
     steps:
     - uses: actions/checkout@v2
-    - uses: mirromutth/mysql-action@v1.1
-      with:
-        character set server: 'utf8' # Optional, default value is 'utf8mb4'. The '--character-set-server' option for mysqld
-        collation server: 'utf8_general_ci' # Optional, default value is 'utf8mb4_general_ci'. The '--collation-server' option for mysqld
-        mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
-        mysql database: 'portfoliodb' # Optional, default value is "test". The specified database which will be create
-        mysql user: 'root' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
-        mysql password: artwork123 
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
