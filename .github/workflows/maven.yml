@@ -11,16 +11,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     services:
-      postgres:
-        image: postgres:10.8
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
+      mariadb:
+        image: mariadb:latest
         ports:
-        - 5432:5432
-        # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+          - 3306
+        env:
+          MYSQL_USER: user
+          MYSQL_PASSWORD: artwork123
+          MYSQL_DATABASE: portfoliodb
+          MYSQL_ROOT_PASSWORD: artwork123
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
 
     steps:
     - uses: actions/checkout@v2
