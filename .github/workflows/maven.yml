@@ -27,11 +27,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-   - name: Verify MySQL connection from host
+    - name: Verify MySQL connection from host and Build with Maven
       run: |
         sudo apt-get install -y mysql-client
         mysql --host 127.0.0.1 --port 3306 -uroot -partwork123 -e "SHOW DATABASES"
-    - name: Build with Maven
-      run: |
-        mysql --port 3306 -u root -h 127.0.0.1 -prootpass -e 'CREATE DATABASE IF NOT EXISTS portfoliodb;'
         mvn -B package --file pom.xml
