@@ -67,24 +67,17 @@ public class SimpleController {
     
     @GetMapping("/galleryPage")
     public String galleryPage(Model model) {
+    	List<Artwork> artworkList = artworkRepository.findAll();
         
+        model.addAttribute("artworkList", artworkList);
+        model.addAttribute("imgUtil", new ImageUtil());
         return "Gallery";
 
     }
     
-    @GetMapping("/aboutPage")
-    public String aboutPage(Model model) {
-        
-        return "about";
-
-    }
+   
     
-    @GetMapping("/contactPage")
-    public String contactPage(Model model) {
-       
-        return "contact";
-
-    }
+    
     
    
 
