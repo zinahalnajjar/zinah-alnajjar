@@ -11,16 +11,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     services:
-      mariadb:
-        image: mariadb:latest
+      postgres:
+        image: postgres:latest
         ports:
-          - 3306:3306
+          - 5432:5432
         env:
-          MYSQL_USER: user
-          MYSQL_PASSWORD: artwork123
-          MYSQL_DATABASE: portfoliodb
-          MYSQL_ROOT_PASSWORD: artwork123
-        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
+          POSTGRES_PASSWORD: artwork
+         options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
     - uses: actions/checkout@v2
@@ -30,6 +31,4 @@ jobs:
         java-version: 1.8
     - name: Verify MySQL connection from host and Build with Maven
       run: |
-        sudo apt-get install -y mysql-client
-        mysql --host 127.0.0.1 --port 3306 -uroot -partwork123 -e "SHOW DATABASES"
         mvn -B package --file pom.xml
